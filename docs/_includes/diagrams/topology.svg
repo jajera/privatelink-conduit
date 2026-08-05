@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 310" width="100%" role="img" aria-label="Lab topology: two consumers to one Sydney provider">
+  <title>Lab topology: two consumers to one Sydney provider</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="diagram-arrow-head"/>
+    </marker>
+  </defs>
+  <rect x="20" y="16" width="360" height="118" rx="12" class="diagram-cluster"/>
+  <text x="34" y="38" class="diagram-label" font-weight="600" font-size="12">Sydney consumer · ap-southeast-2</text>
+  <rect x="40" y="48" width="110" height="64" rx="10" class="diagram-node"/>
+  <text x="95.0" y="80.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">Test EC2</text>
+  <rect x="175" y="42" width="185" height="76" rx="10" class="diagram-accent"/>
+  <text x="267.5" y="72.5" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">VPCE</text>
+  <text x="267.5" y="87.5" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-size="11">config.conduit.internal</text>
+  <line x1="150" y1="80" x2="175" y2="80" class="diagram-line" marker-end="url(#arrow)"/>
+  <rect x="20" y="154" width="360" height="130" rx="12" class="diagram-cluster"/>
+  <text x="34" y="176" class="diagram-label" font-weight="600" font-size="12">Melbourne consumer · ap-southeast-4</text>
+  <rect x="40" y="192" width="110" height="64" rx="10" class="diagram-node"/>
+  <text x="95.0" y="224.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">Test EC2</text>
+  <rect x="175" y="180" width="185" height="88" rx="10" class="diagram-accent"/>
+  <text x="267.5" y="209.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">VPCE</text>
+  <text x="267.5" y="224.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-size="11">config-xr.conduit.internal</text>
+  <text x="267.5" y="239.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-size="11">service_region → apse2</text>
+  <line x1="150" y1="224" x2="175" y2="224" class="diagram-line" marker-end="url(#arrow)"/>
+  <rect x="420" y="70" width="440" height="180" rx="12" class="diagram-cluster"/>
+  <text x="434" y="92" class="diagram-label" font-weight="600" font-size="12">shared-services · Sydney · 10.50.0.0/16</text>
+  <rect x="440" y="118" width="100" height="72" rx="10" class="diagram-accent"/>
+  <text x="490.0" y="146.5" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">Endpoint</text>
+  <text x="490.0" y="161.5" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-size="11">service</text>
+  <rect x="565" y="124" width="80" height="60" rx="10" class="diagram-node"/>
+  <text x="605.0" y="154.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">NLB</text>
+  <rect x="670" y="124" width="90" height="60" rx="10" class="diagram-node"/>
+  <text x="715.0" y="154.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">App EC2</text>
+  <rect x="785" y="124" width="55" height="60" rx="10" class="diagram-node"/>
+  <text x="812.5" y="154.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">RDS</text>
+  <line x1="540" y1="154" x2="565" y2="154" class="diagram-line" marker-end="url(#arrow)"/>
+  <line x1="645" y1="154" x2="670" y2="154" class="diagram-line" marker-end="url(#arrow)"/>
+  <line x1="760" y1="154" x2="785" y2="154" class="diagram-line" marker-end="url(#arrow)"/>
+  <line x1="360" y1="80" x2="440" y2="140" class="diagram-line" marker-end="url(#arrow)"/>
+  <rect x="364.0" y="99.0" width="72" height="20" rx="4" class="diagram-edge-bg"/>
+  <text x="400.0" y="110.0" text-anchor="middle" dominant-baseline="middle" class="diagram-edge-text" font-size="11">same-Region</text>
+  <line x1="360" y1="224" x2="440" y2="180" class="diagram-line" marker-end="url(#arrow)"/>
+  <rect x="361.0" y="191.0" width="78.0" height="20" rx="4" class="diagram-edge-bg"/>
+  <text x="400.0" y="202.0" text-anchor="middle" dominant-baseline="middle" class="diagram-edge-text" font-size="11">cross-Region</text>
+</svg>

@@ -1,0 +1,14 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script>
+(function () {
+  try {
+    var theme = localStorage.getItem('plc-docs-theme');
+    if (theme !== 'conduit' && theme !== 'conduit-dark') return;
+    var link = document.querySelector('link[rel="stylesheet"]');
+    if (!link) return;
+    link.href = '{{ "/assets/css/just-the-docs-" | relative_url }}' + theme + '.css';
+  } catch (e) {}
+})();
+</script>

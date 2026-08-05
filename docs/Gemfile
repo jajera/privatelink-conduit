@@ -1,0 +1,12 @@
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.3"
+gem "just-the-docs", "0.12.0"
+# Needed for sass.silence_deprecations (theme still on @import / darken)
+gem "jekyll-sass-converter", "~> 3.1"
+
+gem "jekyll-seo-tag", "~> 2.8"
+gem "jekyll-include-cache", "~> 0.2"
+
+# Required for `jekyll serve` on Ruby 3.0+
+gem "webrick", "~> 1.9"

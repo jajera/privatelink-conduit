@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 310" width="100%" role="img" aria-label="PrivateLink request path from consumer to provider workload">
+  <title>PrivateLink request path from consumer to provider workload</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="diagram-arrow-head"/>
+    </marker>
+  </defs>
+  <rect x="40" y="20" width="100" height="44" rx="10" class="diagram-node"/>
+  <text x="90.0" y="42.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">Client</text>
+  <line x1="90" y1="64" x2="90" y2="260" class="diagram-line" stroke-dasharray="3 4"/>
+  <rect x="160" y="20" width="100" height="44" rx="10" class="diagram-node"/>
+  <text x="210.0" y="42.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">VPCE ENI</text>
+  <line x1="210" y1="64" x2="210" y2="260" class="diagram-line" stroke-dasharray="3 4"/>
+  <rect x="280" y="20" width="100" height="44" rx="10" class="diagram-node"/>
+  <text x="330.0" y="42.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">EP service</text>
+  <line x1="330" y1="64" x2="330" y2="260" class="diagram-line" stroke-dasharray="3 4"/>
+  <rect x="400" y="20" width="100" height="44" rx="10" class="diagram-node"/>
+  <text x="450.0" y="42.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">NLB</text>
+  <line x1="450" y1="64" x2="450" y2="260" class="diagram-line" stroke-dasharray="3 4"/>
+  <rect x="520" y="20" width="100" height="44" rx="10" class="diagram-node"/>
+  <text x="570.0" y="42.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">App</text>
+  <line x1="570" y1="64" x2="570" y2="260" class="diagram-line" stroke-dasharray="3 4"/>
+  <line x1="90" y1="90" x2="210" y2="90" class="diagram-line" marker-end="url(#arrow)"/>
+  <rect x="114.0" y="79.0" width="72" height="20" rx="4" class="diagram-edge-bg"/>
+  <text x="150.0" y="90.0" text-anchor="middle" dominant-baseline="middle" class="diagram-edge-text" font-size="11">1 · TCP :80</text>
+  <line x1="210" y1="120" x2="330" y2="120" class="diagram-line" marker-end="url(#arrow)"/>
+  <rect x="221.25" y="109.0" width="97.5" height="20" rx="4" class="diagram-edge-bg"/>
+  <text x="270.0" y="120.0" text-anchor="middle" dominant-baseline="middle" class="diagram-edge-text" font-size="11">2 · PrivateLink</text>
+  <line x1="330" y1="150" x2="450" y2="150" class="diagram-line" marker-end="url(#arrow)"/>
+  <rect x="354.0" y="139.0" width="72" height="20" rx="4" class="diagram-edge-bg"/>
+  <text x="390.0" y="150.0" text-anchor="middle" dominant-baseline="middle" class="diagram-edge-text" font-size="11">3 · forward</text>
+  <line x1="450" y1="180" x2="570" y2="180" class="diagram-line" marker-end="url(#arrow)"/>
+  <rect x="474.0" y="169.0" width="72" height="20" rx="4" class="diagram-edge-bg"/>
+  <text x="510.0" y="180.0" text-anchor="middle" dominant-baseline="middle" class="diagram-edge-text" font-size="11">4 · target</text>
+  <line x1="570" y1="210" x2="450" y2="210" class="diagram-line" marker-end="url(#arrow)"/>
+  <rect x="471.0" y="199.0" width="78.0" height="20" rx="4" class="diagram-edge-bg"/>
+  <text x="510.0" y="210.0" text-anchor="middle" dominant-baseline="middle" class="diagram-edge-text" font-size="11">5 · response</text>
+  <line x1="450" y1="240" x2="90" y2="240" class="diagram-line" marker-end="url(#arrow)"/>
+  <rect x="231.0" y="229.0" width="78.0" height="20" rx="4" class="diagram-edge-bg"/>
+  <text x="270.0" y="240.0" text-anchor="middle" dominant-baseline="middle" class="diagram-edge-text" font-size="11">6 · response</text>
+  <text x="320" y="290" text-anchor="middle" class="diagram-muted" font-size="12">Provider has no route into the consumer VPC</text>
+</svg>
