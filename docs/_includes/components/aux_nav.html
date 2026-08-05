@@ -42,29 +42,39 @@
     return theme === DARK ? DARK : LIGHT;
   }
 
-  function apply(theme) {
+  function systemTheme() {
+    try {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? DARK : LIGHT;
+    } catch (e) {
+      return LIGHT;
+    }
+  }
+
+  function storedTheme() {
+    try {
+      var stored = localStorage.getItem(KEY);
+      if (stored === LIGHT || stored === DARK) return stored;
+    } catch (e) {}
+    return null;
+  }
+
+  function resolve() {
+    return storedTheme() || systemTheme();
+  }
+
+  function apply(theme, persist) {
     theme = normalize(theme);
     if (typeof jtd !== 'undefined' && jtd.setTheme) {
       jtd.setTheme(theme);
     }
-    try { localStorage.setItem(KEY, theme); } catch (e) {}
+    if (persist) {
+      try { localStorage.setItem(KEY, theme); } catch (e) {}
+    }
     var btn = document.getElementById('conduit-theme-toggle');
     if (btn) {
       btn.setAttribute('aria-label', theme === DARK ? 'Switch to light mode' : 'Switch to dark mode');
       btn.setAttribute('title', theme === DARK ? 'Switch to light mode' : 'Switch to dark mode');
     }
-  }
-
-  function current() {
-    try {
-      var stored = localStorage.getItem(KEY);
-      if (stored) return normalize(stored);
-    } catch (e) {}
-    if (typeof jtd !== 'undefined' && jtd.getTheme) {
-      var t = jtd.getTheme();
-      if (t === DARK) return DARK;
-    }
-    return LIGHT;
   }
 
   function ready(fn) {
@@ -78,12 +88,22 @@
   }
 
   ready(function () {
-    apply(current());
+    apply(resolve(), false);
     var btn = document.getElementById('conduit-theme-toggle');
-    if (!btn) return;
-    btn.addEventListener('click', function () {
-      apply(current() === DARK ? LIGHT : DARK);
-    });
+    if (btn) {
+      btn.addEventListener('click', function () {
+        apply(resolve() === DARK ? LIGHT : DARK, true);
+      });
+    }
+    try {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      var onChange = function () {
+        if (storedTheme()) return;
+        apply(systemTheme(), false);
+      };
+      if (mq.addEventListener) mq.addEventListener('change', onChange);
+      else if (mq.addListener) mq.addListener(onChange);
+    } catch (e) {}
   });
 })();
 </script>
