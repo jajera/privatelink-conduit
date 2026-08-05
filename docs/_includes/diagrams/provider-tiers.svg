@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 370" width="100%" role="img" aria-label="Provider tiers: endpoint service to NLB to app to RDS">
+  <title>Provider tiers: endpoint service to NLB to app to RDS</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="diagram-arrow-head"/>
+    </marker>
+  </defs>
+  <rect x="240" y="20" width="140" height="56" rx="10" class="diagram-accent"/>
+  <text x="310.0" y="48.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">Endpoint service</text>
+  <rect x="250" y="110" width="120" height="56" rx="10" class="diagram-node"/>
+  <text x="310.0" y="138.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">Internal NLB</text>
+  <rect x="250" y="200" width="120" height="56" rx="10" class="diagram-node"/>
+  <text x="310.0" y="228.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">App EC2</text>
+  <rect x="250" y="290" width="120" height="56" rx="10" class="diagram-node"/>
+  <text x="310.0" y="318.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">RDS Postgres</text>
+  <rect x="40" y="200" width="120" height="56" rx="10" class="diagram-node"/>
+  <text x="100.0" y="228.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">S3 gateway</text>
+  <rect x="460" y="200" width="140" height="56" rx="10" class="diagram-node"/>
+  <text x="530.0" y="228.0" text-anchor="middle" dominant-baseline="middle" class="diagram-text" font-weight="600" font-size="12">SSM endpoints</text>
+  <line x1="310" y1="76" x2="310" y2="110" class="diagram-line" marker-end="url(#arrow)"/>
+  <line x1="310" y1="166" x2="310" y2="200" class="diagram-line" marker-end="url(#arrow)"/>
+  <line x1="310" y1="256" x2="310" y2="290" class="diagram-line" marker-end="url(#arrow)"/>
+  <rect x="274.0" y="262.0" width="72" height="20" rx="4" class="diagram-edge-bg"/>
+  <text x="310.0" y="273.0" text-anchor="middle" dominant-baseline="middle" class="diagram-edge-text" font-size="11">5432</text>
+  <line x1="250" y1="228" x2="160" y2="228" class="diagram-line" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+  <line x1="370" y1="228" x2="460" y2="228" class="diagram-line" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+</svg>
