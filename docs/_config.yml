@@ -24,6 +24,19 @@ aux_links_new_tab: true
 # Built CSS: assets/css/just-the-docs-conduit{,-dark}.scss
 color_scheme: conduit
 
+favicon_ico: "/assets/images/favicon.ico"
+
+# Site-wide Open Graph / Twitter card (jekyll-seo-tag). Do not set `logo` —
+# just-the-docs would swap the header title for that image.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/og-image.png
+
+twitter:
+  card: summary_large_image
+
 # just-the-docs 0.12 still uses Sass @import / map-get / darken() internally
 # (upstream: just-the-docs#1607). Quiet that until the theme migrates to @use.
 # Our conduit-dark scheme no longer imports their dark.scss (avoids lighten/darken).
