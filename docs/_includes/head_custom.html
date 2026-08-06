@@ -6,18 +6,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<script>
-(function () {
-  try {
-    var LIGHT = 'conduit';
-    var DARK = 'conduit-dark';
-    var theme = localStorage.getItem('plc-docs-theme');
-    if (theme !== LIGHT && theme !== DARK) {
-      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? DARK : LIGHT;
-    }
-    var link = document.querySelector('link[rel="stylesheet"]');
-    if (!link) return;
-    link.href = '{{ "/assets/css/just-the-docs-" | relative_url }}' + theme + '.css';
-  } catch (e) {}
-})();
-</script>
+{%- comment -%}
+  Theme stylesheet is chosen in head.html (before paint). Do not swap it here —
+  that caused FOUC on cold navigations.
+{%- endcomment -%}
