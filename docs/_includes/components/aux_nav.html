@@ -62,19 +62,33 @@
     return storedTheme() || systemTheme();
   }
 
+  function syncToggle(theme) {
+    var btn = document.getElementById('conduit-theme-toggle');
+    if (!btn) return;
+    btn.setAttribute('aria-label', theme === DARK ? 'Switch to light mode' : 'Switch to dark mode');
+    btn.setAttribute('title', theme === DARK ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+
+  function themeStylesheet() {
+    return (
+      document.querySelector('link[rel="stylesheet"][href*="just-the-docs-conduit"]') ||
+      document.querySelector('link[rel="stylesheet"]')
+    );
+  }
+
   function apply(theme, persist) {
     theme = normalize(theme);
-    if (typeof jtd !== 'undefined' && jtd.setTheme) {
+    var link = themeStylesheet();
+    if (link) {
+      var base = '{{ "/assets/css/just-the-docs-" | relative_url }}';
+      link.setAttribute('href', base + theme + '.css');
+    } else if (typeof jtd !== 'undefined' && jtd.setTheme) {
       jtd.setTheme(theme);
     }
     if (persist) {
       try { localStorage.setItem(KEY, theme); } catch (e) {}
     }
-    var btn = document.getElementById('conduit-theme-toggle');
-    if (btn) {
-      btn.setAttribute('aria-label', theme === DARK ? 'Switch to light mode' : 'Switch to dark mode');
-      btn.setAttribute('title', theme === DARK ? 'Switch to light mode' : 'Switch to dark mode');
-    }
+    syncToggle(theme);
   }
 
   function ready(fn) {
@@ -88,7 +102,8 @@
   }
 
   ready(function () {
-    apply(resolve(), false);
+    // head.html already set the correct stylesheet — do not setTheme again (avoids FOUC)
+    syncToggle(resolve());
     var btn = document.getElementById('conduit-theme-toggle');
     if (btn) {
       btn.addEventListener('click', function () {
