@@ -5,8 +5,8 @@ description: >-
 
 theme: just-the-docs
 
-url: https://jajera.github.io
-baseurl: /privatelink-conduit
+url: https://privatelink-conduit.johna.kiwi
+baseurl: ""
 
 permalink: pretty
 

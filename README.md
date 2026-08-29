@@ -20,7 +20,7 @@ Both consumers talk to the **same** Sydney provider stack. Cross-region uses nat
 
 ## Docs
 
-📖 **[Published documentation site](https://jajera.github.io/privatelink-conduit/)** — long-form
+📖 **[Published documentation site](https://privatelink-conduit.johna.kiwi/)** — long-form
 walkthrough, architecture, PrivateLink mechanics, the NZ limitation, and troubleshooting.
 
 | Doc | Purpose |
