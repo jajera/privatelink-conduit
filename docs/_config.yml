@@ -3,6 +3,8 @@ description: >-
   Cross-account AWS PrivateLink into a 3-tier private API, and what to do when
   cross-Region PrivateLink is not available in your provider Region.
 
+ga_tracking: G-6GP64SX615
+
 theme: just-the-docs
 
 url: https://privatelink-conduit.johna.kiwi
